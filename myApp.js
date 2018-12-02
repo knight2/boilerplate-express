@@ -3,6 +3,10 @@ var express = require('express');
 var app = express();
 
 console.log('hello world');
+app.get("/", function(req, res){
+    res.send("Hello Express");
+});
+ 
 // --> 7)  Mount the Logger middleware here
 
 
