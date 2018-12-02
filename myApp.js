@@ -4,7 +4,7 @@ var app = express();
 
 console.log('hello world');
 app.get("/", function(req, res){
-    res.send("Hello Express");
+    res.sendFile(__dirname + '/views/index.html');
 });
  
 // --> 7)  Mount the Logger middleware here
