@@ -12,7 +12,7 @@ app.use(function middleware(req, res, next){
 });
 
 // --> 11)  Mount the body-parser middleware  here
-app.use(bodyParser(urlencoded({extended: false})));
+app.use(bodyParser.urlencoded({extended: false}));
 
 /** 1) Meet the node console. */
 console.log('hello world');
