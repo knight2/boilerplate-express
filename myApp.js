@@ -1,19 +1,28 @@
 
 var express = require('express');
 var app = express();
+require('dotenv').config(); //Use dotenv to read .env vars into Node
 
 console.log('hello world');
+
 app.get("/", function(req, res){
     res.sendFile(__dirname + '/views/index.html');
 });
 
 app.use(express.static(__dirname + "/public"));
 
+if (process.env.MESSAGE_STYLE === "uppercase"){
+    console.log("uppercasE");
+}
 
 app.get("/json", function(req, res){
-    res.json({"message":"Hello Json"});
+    if (process.env.MESSAGE_STYLE === "uppercase"){
+      res.json({"message": "HELLO JSON"});
+    }
+  else{
+    res.json({"message": "Hello json"});
+  }
 });
- 
 // --> 7)  Mount the Logger middleware here
 
 
